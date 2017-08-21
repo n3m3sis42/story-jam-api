@@ -4,12 +4,19 @@ class Api::V1::SpreadsController < ApplicationController
     # NOTE we will translate type to id in React because only a few types that don't change.
     # TODO figure out where/how we will determine positions and meaning of cards and add db fields for this info -- create action logic may change depending on how this is implemented
     spread = Spread.create(spread_params)
-    render json: spread
+    type = Type.find(spread.type.id)
+    render json: {spread: spread, data: type.data}
   end
 
   def index
     spreads = Spread.all
     render json: spreads
+  end
+
+  def show
+    spread = Spread.find(params[:id])
+    type = Type.find(spread.type.id)
+    render json: {spread: spread, data: type.data}
   end
 
   def update

@@ -10,6 +10,11 @@ class Api::V1::StoriesController < ApplicationController
       render json: stories
     end
 
+    def show
+      story = Story.find(params[:id])
+      render json: story
+    end
+
     def update
       story = Story.find(params[:id])
       story.update(story_params)
