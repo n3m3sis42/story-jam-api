@@ -11,7 +11,7 @@ class Api::V1::JamsController < ApplicationController
         type = Type.find(spread.type.id)
         cards = jam.cards
         stories = jam.stories
-        render json: {jam: jam, spread: spread, data: type.data, cards: cards, stories: stories}
+        render json: {jam: jam, spread: spread, type: type, data: type.data, cards: cards, stories: stories}
       end
 
       def index
