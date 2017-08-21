@@ -187,6 +187,6 @@ cards = cardData.map do |card|
 end
 
 spread1 = Spread.create(title: "Trying this out", description: "My spread", type_id: 1, jam_id: 1)
-spread1.cards << cards
+spread1.cards << cards[0..7]
 
 story = Story.create(title: "Something", content: "blah blah blah", jam_id: 1)
