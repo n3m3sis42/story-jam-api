@@ -4,6 +4,7 @@ class CreateSpreads < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :description
       t.integer :type_id
+      t.integer :jam_id
 
       t.timestamps
     end

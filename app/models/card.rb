@@ -4,13 +4,7 @@ class Card < ApplicationRecord
   belongs_to :category
 
   def self.draw(num)
-    deck = Card.all.shuffle
-    hand = []
-    num.times do
-      card= deck.shift,
-      hand << card
-    end
-    return hand
+    Card.order('RANDOM()').limit(8)
   end
 
 end

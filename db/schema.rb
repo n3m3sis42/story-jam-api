@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170818150635) do
     t.integer "card_id"
     t.integer "spread_id"
     t.boolean "flipped"
+    t.integer "order"
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -29,7 +29,7 @@ class Api::V1::SpreadsController < ApplicationController
   private
 
   def spread_params
-    params.require(:spread).permit(:title, :description, :type_id)
+    params.require(:spread).permit(:title, :description, :type_id, :jam_id)
   end
 
 end

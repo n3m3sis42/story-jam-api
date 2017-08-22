@@ -12,7 +12,8 @@ class Jam < ApplicationRecord
 
   def spread=(params)
     # spread: :title, :description, :type_id, :jam_id
-    self.spread = Spread.new(params)
+    byebug
+    self.build_spread(params)
   end
 
 end
