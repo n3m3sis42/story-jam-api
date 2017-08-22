@@ -9,4 +9,10 @@ class Jam < ApplicationRecord
   has_many :versions, through: :stories
   has_many :comments, through: :stories
   has_many :cards, through: :spread
+
+  def spread=(params)
+    # spread: :title, :description, :type_id, :jam_id
+    self.spread = Spread.new(params)
+  end
+
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :jams, only: [:create, :index, :update, :show]
       resources :spreads, only: [:create, :index, :update, :show]
       resources :stories, only: [:create, :index, :update, :show]
+      resources :types, only: [:index]
     end
   end
 

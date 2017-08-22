@@ -4,6 +4,7 @@ class CreateCardSpreads < ActiveRecord::Migration[5.1]
       t.integer :card_id
       t.integer :spread_id
       t.boolean :flipped
+      t.integer :order
       t.string :notes
 
       t.timestamps
