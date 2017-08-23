@@ -12,7 +12,8 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     jams = user.jams
-    
+    stories = user.
+    render json: {user: user, jams: jams}
   end
 
   def update
