@@ -2,7 +2,8 @@ class Api::V1::StoriesController < ApplicationController
 
     def create
       story = Story.create(story_params)
-      render json: story
+      jam = story.jam.build_api_data
+      render json: {jam: jam, story: story}
     end
 
     def index
@@ -12,13 +13,15 @@ class Api::V1::StoriesController < ApplicationController
 
     def show
       story = Story.find(params[:id])
-      render json: story
+      jam = story.jam.build_api_data
+      render json: {jam: jam, story: story}
     end
 
     def update
       story = Story.find(params[:id])
       story.update(story_params)
-      render json: story
+      jam = story.jam.build_api_data
+      render json: {jam: jam, story: story}
     end
 
 

@@ -15,4 +15,17 @@ class Jam < ApplicationRecord
     self.build_spread(params)
   end
 
+  def build_api_data
+    {jam: self,
+      spread: {
+        info: self.spread,
+        cards: self.spread.cards,
+        positions: self.spread.card_spreads,
+        type: self.spread.type,
+        data: self.spread.type.data,
+        board: self.spread.build_board
+      },
+      stories: self.stories}
+  end
+
 end

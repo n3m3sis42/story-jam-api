@@ -11,10 +11,7 @@ class Api::V1::JamsController < ApplicationController
           card_spread.order = index
           card_spread.save
           end
-        jam.save
-        board = spread.build_board
-        stories = jam.stories
-        render json: {jam: jam, spread: {info: spread, cards: spread.cards, positions: spread.card_spreads, type: type, data: type.data, board: board}, stories: stories}
+        render json: jam.build_api_data
       end
 
       def show
@@ -23,7 +20,7 @@ class Api::V1::JamsController < ApplicationController
         type = Type.find(spread.type.id)
         cards = jam.cards
         stories = jam.stories
-        render json: {jam: jam, spread: spread, type: type, data: type.data, cards: cards, stories: stories}
+        render json: jam.build_api_data
       end
 
       def index

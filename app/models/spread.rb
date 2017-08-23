@@ -8,7 +8,7 @@ class Spread < ApplicationRecord
   has_one :chat, through: :jam
 
   def build_board
-    card_data = self.type.data[:order_and_position]
+    card_data = self.type.order_and_position
     card_spreads = self.card_spreads.order(:order)
 
     # iterate over the card_spreads

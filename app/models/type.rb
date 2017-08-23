@@ -21,4 +21,12 @@ class Type < ApplicationRecord
     @@typeDictionary[:"#{self.name}"]
   end
 
+  def num_cards
+    self.data[:card_num]
+  end
+
+  def order_and_position
+    self.data[:order_and_position]
+  end
+
 end
