@@ -25,7 +25,7 @@ class Api::V1::StoriesController < ApplicationController
     private
 
     def story_params
-      params.require(:story).permit(:title, :description, :type_id)
+      params.require(:story).permit(:title, :content, :jam_id)
     end
 
 end
