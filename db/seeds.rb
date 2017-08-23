@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-jason = User.create(username: "jason", first_name: "Jason", last_name: "Tseng")
+jason = User.create(username: "jason", first_name: "Jason", last_name: "Tseng", password: "jason")
 
-sarah = User.create(username: "sarah", first_name: "Sarah", last_name: "Evans")
+sarah = User.create(username: "sarah", first_name: "Sarah", last_name: "Evans", password: "sarah")
 
 jam1 = Jam.create(name: "test1", description: "a test jam")
 
@@ -178,6 +178,69 @@ cardData = [
     image_url:'',
     flipped_image_url:'',
     category_id: 3
+  },
+  {
+    name: 'Time',
+    description: 'Time is of utmost importance, whether itis the ticking of a bomb, the passage of hours, years, centures, or millennia.',
+    flipped_name: 'Stasis',
+    flipped_description: "Time stands still or at least seams to. Could be a literal stoppage of time's passage, horrible boredom, or just a moment of such intense clarity that it feels like it lasts a lifetime.",
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 4
+  },
+  {
+    name: 'Chastity',
+    description: 'A refusal of sex or love is called for. Someone must resist temptation that could lead to undesirable consequences.',
+    flipped_name: 'Lust',
+    flipped_description: 'Unbridled carnal desire blinds one to reason and takes control of his or her actions.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 2
+  },
+  {
+    name: 'The Executioner',
+    description: 'This killer is dispassionate or even friendly toward the intended victim, but feels quite strongly about the fee paid for completing the job.',
+    flipped_name: 'The Assassin',
+    flipped_description: 'Whether driven by vendetta or ideology, this hunter will stop at nothing until blood has been spilled.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 1
+  },
+  {
+    name: 'Charity',
+    description: 'Whether one is rich or poor, sharing with those who have less can be its own reward.',
+    flipped_name: 'Envy',
+    flipped_description: 'If one feels the universe is rewarding others unfairly, the bitterness that sets in can be all-consuming.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 4
+  },
+  {
+    name: 'Desire',
+    description: 'A fire burns insie, filling one with a deep passion to possess someone or something, even if he or she must surmount substantial obstacles to acquire it.',
+    flipped_name: 'Aversion',
+    flipped_description: 'Whether through a phobia or from genuine distaste, someone is strongly repulsed by something and may go to great lengths to avoid it.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 1
+  },
+  {
+    name: 'The Outsider',
+    description: "Some people just don't belong. Whether it's a club, profession, tribe, or culture, this person is clearly not included or welcome.",
+    flipped_name: 'The Outcast',
+    flipped_description: 'Someone who had been previously admired by others is suddenly shunned and must come to terms with being cast out.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 1
+  },
+  {
+    name: 'The Manipulator',
+    description: "Some do not need a gun to get others to do their bidding. This person's weapons are flattery, lies, guilt, blackmail, or bullying.",
+    flipped_name: 'The Leech',
+    flipped_description: 'An emotionally starved person who drains time and energy from others. His or her life is always a tragedy. No amount of support or assistance will ever be enough.',
+    image_url:'',
+    flipped_image_url:'',
+    category_id: 2
   },
 ]
 

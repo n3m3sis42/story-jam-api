@@ -26,6 +26,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def jam_params
-    params.require(:user).permit(:name, :description)
+    params.require(:user).permit(:name, :description, :password, :password_confirmation)
   end
 end
