@@ -8,33 +8,12 @@ class Spread < ApplicationRecord
   has_one :chat, through: :jam
 
   def build_board
-    info = self.type.data[:order_and_position]
+    card_data = self.type.data[:order_and_position]
     card_spreads = self.card_spreads.order(:order)
 
     # iterate over the card_spreads
     # for each element, use the index to get the position and z-depth from the card-spread.
     # assign the empty-board where the board key == the element position.
-
-    card_spreads.each_with_index do |card_spreads, index|
-      position = info[:order_and_position][index][:position]
-      z = info[:order_and_position][index][:z]
-      card = Card.find(card_spreads.card_id)
-      flipped = card_spreads.flipped
-
-      board[position] = {
-        flipped: flipped,
-        data: {
-          id: card.id,
-          name: card.name,
-          description: card.description,
-          flipped_name: card.flipped_name,
-          flipped_description: card.flipped_description,
-          image_url: card.image_url,
-          flipped_image_url: card.flipped_image_url,
-          category_id: card.category_id
-        }
-      }
-    end
 
     board = {
       '0': nil,
@@ -68,6 +47,33 @@ class Spread < ApplicationRecord
       'N': nil,
       'O': nil,
     }
+
+    card_spreads.each_with_index do |card_spreads, index|
+      position = card_data[(index + 1).to_s.to_sym][:position]
+      z = card_data[(index + 1).to_s.to_sym][:z]
+      card = Card.find(card_spreads.card_id)
+      flipped = card_spreads.flipped
+      meaning = card_data[(index + 1).to_s.to_sym][:meaning]
+      category = Category.find(card.category_id)
+
+      board[position] = {
+        flipped: flipped,
+        data: {
+          id: card.id,
+          name: card.name,
+          description: card.description,
+          flipped_name: card.flipped_name,
+          flipped_description: card.flipped_description,
+          image_url: card.image_url,
+          flipped_image_url: card.flipped_image_url,
+          category_id: card.category_id,
+          category_name: category.name
+        },
+        meaning: meaning
+      }
+    end
+
+
 
     return board
   end # end build_board
