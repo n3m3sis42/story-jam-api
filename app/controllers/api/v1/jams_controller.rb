@@ -43,7 +43,5 @@ class Api::V1::JamsController < ApplicationController
       def jam_params
         params.require(:jam).permit(:name, :description, :spread => [:title, :description, :type_id, :jam_id])
       end
-      # params.require(:measurement)
-      # .permit(:name, :groundtruth => [:type, :coordinates => []])
 
 end
