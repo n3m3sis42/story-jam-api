@@ -12,8 +12,9 @@ class Api::V1::JamsController < ApplicationController
           card_spread.save
           end
         jam.save
+        board = spread.build_board
         stories = jam.stories
-        render json: {jam: jam, spread: {info: spread, cards: spread.cards, positions: spread.card_spreads, type: type, data: type.data}, stories: stories}
+        render json: {jam: jam, spread: {info: spread, cards: spread.cards, positions: spread.card_spreads, type: type, data: type.data, board: board}, stories: stories}
       end
 
       def show
