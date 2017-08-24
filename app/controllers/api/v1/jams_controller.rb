@@ -1,4 +1,5 @@
 class Api::V1::JamsController < ApplicationController
+  skip_before_action :authorized
 
       def create
         jam = Jam.new(jam_params)

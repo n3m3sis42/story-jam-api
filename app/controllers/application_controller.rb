@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
 
   def issue_token(payload)
-    JWT.encode(payload, "supersecretcode")
+    JWT.encode(payload, Rails.application.secrets.secret)
   end
 
   def current_user

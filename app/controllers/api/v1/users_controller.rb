@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+skip_before_action :authorized
   def create
     user = User.create(user_params)
     render json: user

@@ -1,5 +1,5 @@
 class Api::V1::TypesController < ApplicationController
-
+skip_before_action :authorized
 
     def index
       types = Type.all

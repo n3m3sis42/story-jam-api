@@ -1,5 +1,5 @@
 class Api::V1::StoriesController < ApplicationController
-
+skip_before_action :authorized
     def create
       story = Story.create(story_params)
       jam = story.jam.build_api_data
