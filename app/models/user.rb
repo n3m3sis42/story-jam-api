@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :chats, through: :messages, foreign_key: 'author_id'
   has_many :stories, through: :jams
   has_many :spreads, through: :jams
+  has_secure_password
 end

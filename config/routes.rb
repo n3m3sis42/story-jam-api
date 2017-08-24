@@ -7,6 +7,11 @@ Rails.application.routes.draw do
       resources :spreads, only: [:create, :index, :update, :show]
       resources :stories, only: [:create, :index, :update, :show]
       resources :types, only: [:index]
+
+      post '/auth', to: 'auth#create'
+      post '/signup', to: 'users#create'
+      get '/current_user', to: 'auth#verify'
+      get '/me', to: 'auth#show'
     end
   end
 
